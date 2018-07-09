@@ -1,4 +1,8 @@
-<h1>Hello</h1>
+<h1>
+  {{header}}
+</h1>
+
+<h1>This is the Body</h1>
 {{#if published}}
   {{content}}
 {{/if}}
@@ -8,3 +12,9 @@
     <li>{{this.firstName}} {{this.lastName}}</li>
   {{/each}}
 </ul>
+
+<ul>
+{{#for(let i=0; i < this.jobs.length; i++)}}
+  <li>Object.keys({{this.jobs}})[i] makes {{this.jobs[Object.keys({{this.jobs}})[i]]}}
+{{/for}}
+<li>

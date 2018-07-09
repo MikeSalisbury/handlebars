@@ -24,11 +24,18 @@ var people = [
     lastName: 'Salisbury'
   }
 ];
+
 app.get('/', function(req, res){
   res.render('home', {
+    header: "This is the Header",
     content: "this is some content",
     published: true,
-    people
+    people,
+    jobs: {
+      softwareEngineer: 'high',
+      management: 'med',
+      teacher: 'low',
+    }
   });
 });
 app.listen(app.get('port'), function() {
